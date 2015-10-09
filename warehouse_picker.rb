@@ -49,7 +49,8 @@ user_input_bays.each do |b|
   last = b if bays.index(b) > bays.index(last)
 end
 
-puts first, last
+#Find distance apart
+distance_apart = bays.index(last) - bays.index(first)
 
 
 
