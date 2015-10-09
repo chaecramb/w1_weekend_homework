@@ -1,3 +1,5 @@
+require "pry-byebug"
+
 bays = %w(a10 a9 a8 a7 a6 a5 a4 a3 a2 a1 c1 c2 c3 c4 c5 c6 c7 c8 c9 c10 b1 b2 b3 b4 b5 b6 b7 b8 b9 b10)
 
 inventory = {
@@ -38,8 +40,17 @@ user_input_bays = ["c1","a4","b2","c10","c6","b3","a3","a4","a5","a10"]
 #List items in those bays
 items = []
 user_input_bays.each { |bay| items << inventory[bay.to_sym] }
-puts items
 
-#Find farthest appart items
+#Find furthest apart items
+first = user_input_bays.first
+last =  user_input_bays.last
+user_input_bays.each do |b|
+  first = b if bays.index(b) < bays.index(first)
+  last = b if bays.index(b) > bays.index(last)
+end
+
+puts first, last
+
+
 
 
