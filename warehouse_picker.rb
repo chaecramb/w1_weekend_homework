@@ -52,6 +52,12 @@ end
 #Find distance apart
 distance_apart = bays.index(last) - bays.index(first)
 
+#Get list of products
+user_input_products = ["tooth paste", "paint brush", "candy wrapper", "photo album", "bath fizzers", "word search", "rubber duck"]
+
+#Find bays that need to be visited
+puts user_input_products.collect { |p| inventory.key(p) }
+
 
 
 
