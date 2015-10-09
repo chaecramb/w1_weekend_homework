@@ -56,7 +56,10 @@ distance_apart = bays.index(last) - bays.index(first)
 user_input_products = ["tooth paste", "paint brush", "candy wrapper", "photo album", "bath fizzers", "word search", "rubber duck"]
 
 #Find bays that need to be visited
-puts user_input_products.collect { |p| inventory.key(p) }
+bays_to_be_visited = user_input_products.collect { |p| inventory.key(p) }
+
+#Order bays to be visited
+puts bays_to_be_visited.sort { |a, b| bays.index(a.to_s) <=> bays.index(b.to_s) }
 
 
 
